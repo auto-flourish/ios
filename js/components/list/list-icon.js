@@ -90,7 +90,7 @@ class NHListIcon extends Component {
               <Text>Lights</Text>
             </Body>
             <Right>
-              <Switch onValueChange={this.handleInputChange} name="lights" value={this.state.lights} onTintColor="#50B948" />
+              <Switch onValueChange={(value) => this.setState({lights: value})} name="lights" value={this.state.lights} onTintColor="#50B948" />
             </Right>
           </ListItem>
 
