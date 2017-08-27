@@ -39,7 +39,7 @@ class Anatomy extends Component {
 
         <Content padder>
           <Text>
-            Content goes here
+            Graphs will go here
           </Text>
 
         </Content>

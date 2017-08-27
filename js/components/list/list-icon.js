@@ -27,15 +27,35 @@ const Item = Picker.Item;
 class NHListIcon extends Component {
   constructor(props) {
     super(props);
+    this.handleInputChange = this.handleInputChange.bind(this);
     this.state = {
       selectedItem: undefined,
       selected1: "key1",
       results: {
         items: []
-      }
+      },
+      lights: true,
+      waterPump: false,
+      feedValve: false,
+      mixValve: false,
+      drainValve: false,
+      waterFill: false,
+      hvacDamper: false,
+      co2: false,
     };
   }
 
+  handleInputChange(event) {
+    console.log(event);
+    const target = event.target;
+    // const value = target.type === 'checkbox' ? target.checked : target.value;
+    const value = !target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
   onValueChange(value: string) {
     this.setState({
       selected1: value
@@ -59,6 +79,7 @@ class NHListIcon extends Component {
 
         <Content>
           <Separator bordered noTopBorder />
+
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
@@ -66,161 +87,111 @@ class NHListIcon extends Component {
               </Button>
             </Left>
             <Body>
-              <Text>Airplane Mode</Text>
+              <Text>Lights</Text>
             </Body>
             <Right>
-              <Switch value={false} onTintColor="#50B948" />
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="wifi" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Wi-Fi</Text>
-            </Body>
-            <Right>
-              <Text>GeekyAnts</Text>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="bluetooth" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Bluetooth</Text>
-            </Body>
-            <Right>
-              <Text>On</Text>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#4CDA64" }}>
-                <Icon active name="phone-portrait" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Mobile Data</Text>
-            </Body>
-            <Right>
-              <Radio selected />
-            </Right>
-          </ListItem>
-          <ListItem icon last>
-            <Left>
-              <Button style={{ backgroundColor: "#4CDA64" }}>
-                <Icon active name="link" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Personal Hotspot</Text>
-            </Body>
-            <Right>
-              <Text>Off</Text>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
+              <Switch onValueChange={this.handleInputChange} name="lights" value={this.state.lights} onTintColor="#50B948" />
             </Right>
           </ListItem>
 
-          <Separator bordered />
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>Water Pump</Text>
+            </Body>
+            <Right>
+              <Switch name="waterPump" value={this.state.waterPump} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
 
           <ListItem icon>
             <Left>
-              <Button style={{ backgroundColor: "#FD3C2D" }}>
-                <Icon active name="notifications" />
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
               </Button>
             </Left>
             <Body>
-              <Text>Notifications</Text>
+              <Text>Feed Valve</Text>
             </Body>
             <Right>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#8F8E93" }}>
-                <Icon active name="switch" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Control Center</Text>
-            </Body>
-            <Right>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
-            </Right>
-          </ListItem>
-          <ListItem icon last>
-            <Left>
-              <Button style={{ backgroundColor: "#5855D6" }}>
-                <Icon active name="moon" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Do Not Disturb</Text>
-            </Body>
-            <Right>
-              <Text>Yes</Text>
-            </Right>
-          </ListItem>
-          <Separator bordered />
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#4CDA64" }}>
-                <Icon name="arrow-dropdown" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Pick SIM</Text>
-            </Body>
-            <Right>
-              <Picker
-                note
-                iosHeader="Select one"
-                mode="dropdown"
-                selectedValue={this.state.selected1}
-                onValueChange={this.onValueChange.bind(this)}
-              >
-                <Item label="TATA" value="key0" />
-                <Item label="AIRTEL" value="key1" />
-              </Picker>
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Button style={{ backgroundColor: "#8F8E93" }}>
-                <Icon active name="cog" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Software Update</Text>
-            </Body>
-            <Right>
-              <Badge style={{ backgroundColor: "#FD3C2D" }}>
-                <Text>2</Text>
-              </Badge>
-            </Right>
-          </ListItem>
-          <ListItem last icon>
-            <Left>
-              <Button style={{ backgroundColor: "#007AFF" }}>
-                <Icon active name="hand" />
-              </Button>
-            </Left>
-            <Body>
-              <Text>Privacy</Text>
-            </Body>
-            <Right>
-              {Platform.OS === "ios" && <Icon active name="arrow-forward" />}
+              <Switch name="feedValve" value={this.state.feedValve} onTintColor="#50B948" />
             </Right>
           </ListItem>
 
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>Mix Valve</Text>
+            </Body>
+            <Right>
+              <Switch name="mixValve" value={this.state.mixValve} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
+
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>Drain Valve</Text>
+            </Body>
+            <Right>
+              <Switch name="drainValve" value={this.state.drainValve} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
+
+
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>Water Fill</Text>
+            </Body>
+            <Right>
+              <Switch name="waterFill" value={this.state.waterFill} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
+
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>HVAC Damper</Text>
+            </Body>
+            <Right>
+              <Switch name="hvacDamper" value={this.state.hvacDamper} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
+
+          <ListItem icon>
+            <Left>
+              <Button style={{ backgroundColor: "#FF9501" }}>
+                <Icon active name="plane" />
+              </Button>
+            </Left>
+            <Body>
+              <Text>CO2</Text>
+            </Body>
+            <Right>
+              <Switch name="co2" value={false} onTintColor="#50B948" />
+            </Right>
+          </ListItem>
         </Content>
       </Container>
     );
