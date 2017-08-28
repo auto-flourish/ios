@@ -34,7 +34,7 @@ class NHListIcon extends Component {
       results: {
         items: []
       },
-      lights:false,
+      lights: false,
       waterPump: false,
       feedValve: false,
       mixValve: false,
@@ -82,6 +82,21 @@ class NHListIcon extends Component {
       console.log(j)
     })
   }
+  updateState() {
+    const deviceID = "3c0026000247353137323334";
+    const accessToken = "f235b0985b6b46d0b50e3ee93e051dfe1742b201";
+    const particleURL = "https://api.particle.io/v1/devices/"+ deviceID + "/AllState?access_token=" + accessToken;
+    fetch(particleURL).then((res) => {
+      return res.json();
+    }).then((j) => {
+      this.setState({
+
+      })
+    })
+  }
+  componentDidMount() {
+    // 
+  }
   // handleInputChange is called when the switch is toggled
   handleInputChange(value, name) {
     this.request(name);
@@ -105,7 +120,7 @@ class NHListIcon extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>List Icon</Title>
+            <Title>Manual Control</Title>
           </Body>
           <Right />
         </Header>
@@ -116,7 +131,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="bulb" />
               </Button>
             </Left>
             <Body>
@@ -130,7 +145,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="rainy" />
               </Button>
             </Left>
             <Body>
@@ -144,7 +159,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
@@ -158,7 +173,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
@@ -172,7 +187,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
@@ -187,7 +202,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
@@ -201,7 +216,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
@@ -215,7 +230,7 @@ class NHListIcon extends Component {
           <ListItem icon>
             <Left>
               <Button style={{ backgroundColor: "#FF9501" }}>
-                <Icon active name="plane" />
+                <Icon active name="refresh" />
               </Button>
             </Left>
             <Body>
