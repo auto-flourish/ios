@@ -125,8 +125,14 @@ class NHListIcon extends Component {
 
     // fetch(particleURL, {   method: 'POST',   headers: {     'Content-Type':
     // 'application/x-www-form-urlencoded'   },   body: searchParams })
-
-    fetch("https://jsonplaceholder.typicode.com/posts/1").then((res) => {
+    var settings = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: searchParams
+    }
+    fetch(particleURL, settings).then((res) => {
       return res.json();
     }).then((j) => {
       callback(j, undefined);
