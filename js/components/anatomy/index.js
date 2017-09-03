@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-// import StyleSheet from 'react-native';
+import React, {Component} from "react";
 import {
   Container,
   Header,
@@ -15,157 +14,151 @@ import {
   Right,
   Body
 } from "native-base";
-import { SmoothLine } from 'react-native-pathjs-charts'
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     backgroundColor: '#f7f7f7',
-//   },
-// });
+import {SmoothLine} from 'react-native-pathjs-charts'
 
 import styles from "./styles";
 
 class Anatomy extends Component {
-  // static navigationOptions = ({ navigation }) => ({
-  //   title: `SmoothLine - Basic`,
-  // })
+  // static navigationOptions = ({ navigation }) => ({   title: `SmoothLine -
+  // Basic`, })
   constructor(props) {
     super(props);
-    
+
   }
   render() {
     const data = [
-      [{
-        "x": -10,
-        "y": -1000
-      }, {
-        "x": -9,
-        "y": -729
-      }, {
-        "x": -8,
-        "y": -512
-      }, {
-        "x": -7,
-        "y": -343
-      }, {
-        "x": -6,
-        "y": -216
-      }, {
-        "x": -5,
-        "y": -125
-      }, {
-        "x": -4,
-        "y": -64
-      }, {
-        "x": -3,
-        "y": -27
-      }, {
-        "x": -2,
-        "y": -8
-      }, {
-        "x": -1,
-        "y": -1
-      }, {
-        "x": 0,
-        "y": 0
-      }, {
-        "x": 1,
-        "y": 1
-      }, {
-        "x": 2,
-        "y": 8
-      }, {
-        "x": 3,
-        "y": 27
-      }, {
-        "x": 4,
-        "y": 64
-      }, {
-        "x": 5,
-        "y": 125
-      }, {
-        "x": 6,
-        "y": 216
-      }, {
-        "x": 7,
-        "y": 343
-      }, {
-        "x": 8,
-        "y": 512
-      }, {
-        "x": 9,
-        "y": 729
-      }, {
-        "x": 10,
-        "y": 1000
-      }],
-      [{
-        "x": -10,
-        "y": 100
-      }, {
-        "x": -9,
-        "y": 81
-      }, {
-        "x": -8,
-        "y": 64
-      }, {
-        "x": -7,
-        "y": 49
-      }, {
-        "x": -6,
-        "y": 36
-      }, {
-        "x": -5,
-        "y": 25
-      }, {
-        "x": -4,
-        "y": 16
-      }, {
-        "x": -3,
-        "y": 9
-      }, {
-        "x": -2,
-        "y": 4
-      }, {
-        "x": -1,
-        "y": 1
-      }, {
-        "x": 0,
-        "y": 0
-      }, {
-        "x": 1,
-        "y": 1
-      }, {
-        "x": 2,
-        "y": 4
-      }, {
-        "x": 3,
-        "y": 9
-      }, {
-        "x": 4,
-        "y": 16
-      }, {
-        "x": 5,
-        "y": 25
-      }, {
-        "x": 6,
-        "y": 36
-      }, {
-        "x": 7,
-        "y": 49
-      }, {
-        "x": 8,
-        "y": 64
-      }, {
-        "x": 9,
-        "y": 81
-      }, {
-        "x": 10,
-        "y": 100
-      }]
+      [
+        {
+          "x": -10,
+          "y": -1000
+        }, {
+          "x": -9,
+          "y": -729
+        }, {
+          "x": -8,
+          "y": -512
+        }, {
+          "x": -7,
+          "y": -343
+        }, {
+          "x": -6,
+          "y": -216
+        }, {
+          "x": -5,
+          "y": -125
+        }, {
+          "x": -4,
+          "y": -64
+        }, {
+          "x": -3,
+          "y": -27
+        }, {
+          "x": -2,
+          "y": -8
+        }, {
+          "x": -1,
+          "y": -1
+        }, {
+          "x": 0,
+          "y": 0
+        }, {
+          "x": 1,
+          "y": 1
+        }, {
+          "x": 2,
+          "y": 8
+        }, {
+          "x": 3,
+          "y": 27
+        }, {
+          "x": 4,
+          "y": 64
+        }, {
+          "x": 5,
+          "y": 125
+        }, {
+          "x": 6,
+          "y": 216
+        }, {
+          "x": 7,
+          "y": 343
+        }, {
+          "x": 8,
+          "y": 512
+        }, {
+          "x": 9,
+          "y": 729
+        }, {
+          "x": 10,
+          "y": 1000
+        }
+      ],
+      [
+        {
+          "x": -10,
+          "y": 100
+        }, {
+          "x": -9,
+          "y": 81
+        }, {
+          "x": -8,
+          "y": 64
+        }, {
+          "x": -7,
+          "y": 49
+        }, {
+          "x": -6,
+          "y": 36
+        }, {
+          "x": -5,
+          "y": 25
+        }, {
+          "x": -4,
+          "y": 16
+        }, {
+          "x": -3,
+          "y": 9
+        }, {
+          "x": -2,
+          "y": 4
+        }, {
+          "x": -1,
+          "y": 1
+        }, {
+          "x": 0,
+          "y": 0
+        }, {
+          "x": 1,
+          "y": 1
+        }, {
+          "x": 2,
+          "y": 4
+        }, {
+          "x": 3,
+          "y": 9
+        }, {
+          "x": 4,
+          "y": 16
+        }, {
+          "x": 5,
+          "y": 25
+        }, {
+          "x": 6,
+          "y": 36
+        }, {
+          "x": 7,
+          "y": 49
+        }, {
+          "x": 8,
+          "y": 64
+        }, {
+          "x": 9,
+          "y": 81
+        }, {
+          "x": 10,
+          "y": 100
+        }
+      ]
     ]
 
     let options = {
@@ -217,23 +210,18 @@ class Anatomy extends Component {
           <Left>
             <Button
               transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
-              <Icon name="ios-menu" />
+              onPress={() => this.props.navigation.navigate("DrawerOpen")}>
+              <Icon name="ios-menu"/>
             </Button>
           </Left>
           <Body>
             <Title>Header</Title>
           </Body>
-          <Right />
-
+          <Right/>
         </Header>
-
         <Content padder>
-          <SmoothLine data={data} options={options} xKey='x' yKey='y' />
-
+          <SmoothLine data={data} options={options} xKey='x' yKey='y'/>
         </Content>
-
         <Footer>
           <FooterTab>
             <Button active full>

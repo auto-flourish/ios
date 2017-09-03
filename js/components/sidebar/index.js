@@ -26,7 +26,7 @@ const drawerImage = require("../../../img/logo-kitchen-sink.png");
 
 const datas = [
 	{
-		name: "Anatomy",
+		name: "Quick View",
 		route: "Anatomy",
 		icon: "phone-portrait",
 		bg: "#C5F442",
@@ -112,11 +112,11 @@ const datas = [
 	// 	types: "5",
 	// },
 	{
-		name: "List",
+		name: "Manual Control",
 		route: "NHListIcon",
 		icon: "lock",
 		bg: "#5DCEE2",
-		types: "7",
+		// types: "7",
 	},
 	// {
 	// 	name: "ListSwipe",
@@ -125,12 +125,12 @@ const datas = [
 	// 	bg: "#C5F442",
 	// 	types: "2",
 	// },
-	// {
-	// 	name: "Picker",
-	// 	route: "NHPicker",
-	// 	icon: "arrow-dropdown",
-	// 	bg: "#F50C75",
-	// },
+	{
+		name: "Settings",
+		route: "NHPicker",
+		icon: "arrow-dropdown",
+		bg: "#F50C75",
+	},
 	// {
 	// 	name: "Radio",
 	// 	route: "NHRadio",

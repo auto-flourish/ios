@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Platform } from "react-native";
+import React, {Component} from "react";
+import {Platform} from "react-native";
 
 import {
   Container,
@@ -27,14 +27,27 @@ class RegularPicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected1: "key1"
+      selected1: "key1",
+      users: [
+        {
+          uuid: "select",
+          firstName: "",
+          lastName: ""
+        }
+      ]
     };
   }
 
-  onValueChange(value: string) {
-    this.setState({
-      selected1: value
-    });
+  componentDidMount() {
+    // fetch("http://localhost:1323/users").then((res) => {
+    //   return res.json();
+    // }).then((j) => {
+    //   this.setState({users: j})
+    // })
+  }
+
+  onValueChange(value : string) {
+    this.setState({selected1: value});
   }
   render() {
     return (
@@ -42,13 +55,15 @@ class RegularPicker extends Component {
         <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
-              <Icon name="arrow-back" />
+              <Icon name="arrow-back"/>
             </Button>
           </Left>
-          <Body style={{ flex: 3 }}>
+          <Body style={{
+            flex: 3
+          }}>
             <Title>Regular</Title>
           </Body>
-          <Right />
+          <Right/>
         </Header>
 
         <Content>
@@ -56,15 +71,22 @@ class RegularPicker extends Component {
             <Picker
               iosHeader="Select one"
               mode="dropdown"
-              style={{ width: Platform.OS === "ios" ? undefined : 200 }}
+              style={{
+              width: Platform.OS === "ios"
+                ? undefined
+                : 200
+            }}
               selectedValue={this.state.selected1}
-              onValueChange={this.onValueChange.bind(this)}
-            >
-              <Item label="Wallet" value="key0" />
-              <Item label="ATM Card" value="key1" />
-              <Item label="Debit Card" value="key2" />
-              <Item label="Credit Card" value="key3" />
-              <Item label="Net Banking" value="key4" />
+              onValueChange={this
+              .onValueChange
+              .bind(this)}>
+              {this
+                .state
+                .users
+                .map((item, idx) => {
+                  return (<Item key={idx} label={item.uuid} value={item.uuid}/>)
+                })
+}
             </Picker>
           </Form>
         </Content>

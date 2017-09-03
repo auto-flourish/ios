@@ -26,32 +26,32 @@ import styles from "./styles";
 const datas = [
   {
     route: "RegularPicker",
-    text: "Regular"
+    text: "User"
   },
-  {
-    route: "PlaceholderPicker",
-    text: "Placeholder"
-  },
-  {
-    route: "PlaceholderPickerNote",
-    text: "Placeholder (without note)"
-  },
-  {
-    route: "BackButtonPicker",
-    text: "Custom Back Button"
-  },
-  {
-    route: "HeaderPicker",
-    text: "Custom Header Text"
-  },
-  {
-    route: "HeaderStylePicker",
-    text: "Custom Header Style"
-  },
-  {
-    route: "CustomHeaderPicker",
-    text: "Custom Header"
-  }
+  // {
+  //   route: "PlaceholderPicker",
+  //   text: "Placeholder"
+  // },
+  // {
+  //   route: "PlaceholderPickerNote",
+  //   text: "Placeholder (without note)"
+  // },
+  // {
+  //   route: "BackButtonPicker",
+  //   text: "Custom Back Button"
+  // },
+  // {
+  //   route: "HeaderPicker",
+  //   text: "Custom Header Text"
+  // },
+  // {
+  //   route: "HeaderStylePicker",
+  //   text: "Custom Header Style"
+  // },
+  // {
+  //   route: "CustomHeaderPicker",
+  //   text: "Custom Header"
+  // }
 ];
 
 class NHPicker extends Component {
