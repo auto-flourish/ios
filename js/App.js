@@ -5,7 +5,7 @@ import React from "react";
 import { Platform } from "react-native";
 import { Root } from "native-base";
 import { StackNavigator } from "react-navigation";
-
+// import { createStore } from 'redux'
 import Drawer from "./Drawer";
 import Header from "./components/Header/";
 import Header1 from "./components/Header/1";
@@ -173,6 +173,19 @@ const AppNavigator = StackNavigator(
     }
 );
 
+// function user(user = "", action) {
+//     switch (action.type) {
+//     case "set":
+//         return user = action.user;
+//     case "get":
+//         return user;
+//     default:
+//         return state;
+//     }
+// }
+
+// let store = createStore(user);
+// store.dispatch({ type: "set", user:"steve"});
 export default () =>
     <Root>
         <AppNavigator />
